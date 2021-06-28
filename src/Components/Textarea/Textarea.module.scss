@@ -1,0 +1,33 @@
+.textarea {
+  resize: none;
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #263238;
+  height: 153px;
+  padding: 12px;
+  font-size: 16px;
+  margin-bottom: 15px;
+
+  &:focus {
+    border: 2px solid #2F80ED;
+
+    ~ span {
+      color: #2F80ED;
+    }
+  }
+}
+
+.textareaWrapper {
+  max-width: 352px;
+  width: 100%;
+
+  span {
+    position: absolute;
+    top: -14px;
+    left: 12px;
+    background-color: #fff;
+    padding: 3px;
+    font-weight: 700;
+    font-size: 12px;
+  }
+}
