@@ -1,0 +1,41 @@
+.modalWrapper {
+  max-width: 455px;
+  width: 100%;
+  font-size: 14px;
+}
+
+.modalTop {
+  background: #2F80ED;
+  border-radius: 2px;
+  padding: 0 15px;
+  color: white;
+  font-weight: 700;
+  min-height: 56px;
+  display: flex;
+  align-items: center;
+
+  span {
+    margin-right: 20px;
+  }
+
+  button {
+    background-color: transparent;
+    color: white;
+  }
+}
+
+.modalBottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50px;
+
+  button {
+    max-width: 138px;
+    width: 100%;
+    height: 36px;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 4px;
+  }
+}

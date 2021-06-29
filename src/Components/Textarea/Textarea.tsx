@@ -2,7 +2,7 @@ import React, {ChangeEvent, useState} from 'react';
 import s from './Textarea.module.scss'
 
 type textareaPropsType = {
-   label: string
+    label: string
 }
 
 export function Textarea(props: textareaPropsType) {
@@ -13,12 +13,14 @@ export function Textarea(props: textareaPropsType) {
     }
 
     return (
-            <div className={s.textareaWrapper}>
+        <div className={s.textareaWrapper}>
                 <textarea className={s.textarea}
                           value={value}
-                          onChange={onTextareaChange}/>
-                <span>{props.label}</span>
-            </div>
+                          onChange={onTextareaChange}
+                          required
+                />
+            <span>{props.label}</span>
+        </div>
     );
 }
 

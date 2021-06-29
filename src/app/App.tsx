@@ -3,6 +3,7 @@ import {Redirect, Route, Switch } from 'react-router-dom';
 import './App.css';
 import {Navbar} from "../Navbar";
 import {CreateAppeal} from "../pages/CreateAppeal/CreateAppeal";
+import {Appeals} from "../pages/Appeals/Appeals";
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
       </header>
         <Switch>
             <Route exact path={"/create"} render={() => <CreateAppeal/>}/>
-            <Route path={"/appeal"} render={() => <h1>Обращения</h1>}/>
+            <Route path={"/appeal"} render={() => <Appeals /> }/>
             <Route path={'/404'} render={() => <h1>404: PAGE NOT FOUND</h1>}/>
             <Redirect from={'*'} to={"/404"}/>
         </Switch>

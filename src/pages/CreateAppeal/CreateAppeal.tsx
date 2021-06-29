@@ -19,7 +19,7 @@ export function CreateAppeal() {
             <Checkbox label={'Нет отчества'} checked={checked} onCheckboxChange={onCheckboxChange}/>
             <Input type={'tel'} name={'Номер телефона'}/>
             <Textarea label={'Текст обращения'}/>
-            <button className={s.createAppealBtn} type='button'>Создать обращение</button>
+            <button className={s.createAppealBtn} type='submit' onSubmit={()=>{}}>Создать обращение</button>
         </form>
     );
 }

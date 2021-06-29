@@ -1,4 +1,4 @@
-import React, {ChangeEvent, useState} from 'react';
+import React, {ChangeEvent} from 'react';
 import s from './Checkbox.module.scss'
 
 type checkboxPropsType = {
