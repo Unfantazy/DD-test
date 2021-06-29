@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import {Appeal, appealPropsType} from '../../Components/Appeal/Appeal';
 import s from './Appeals.module.scss'
 import {Modal} from "../../Components/Modal/Modal";
-import {Link} from "react-router-dom";
 
 export function Appeals() {
 
