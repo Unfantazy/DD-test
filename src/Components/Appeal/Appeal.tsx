@@ -14,7 +14,6 @@ export type appealPropsType = {
 
 export function Appeal(props: appealPropsType) {
     return (
-
         <tr>
             <td>
                 <button style={{width: '24px', height: '31px', background: 'transparent', padding: '0'}}>
@@ -25,13 +24,12 @@ export function Appeal(props: appealPropsType) {
                     />
                 </button>
             </td>
-            <td className={s.item}><Link to={'/detailed'}>{props.firstName} </Link></td>
+            <td className={s.item}><Link to={'/detailed'}>{props.firstName}</Link></td>
             <td className={s.item}>{props.lastName}</td>
             <td className={s.item}>{ !props.withoutMiddleName && props.middleName}</td>
             <td className={s.item}>{props.userPhone}</td>
             <td className={s.item}>{props.text}</td>
         </tr>
-
     );
 }
 

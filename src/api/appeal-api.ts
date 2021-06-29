@@ -8,11 +8,11 @@ const instance = axios.create({
 export const appealApi = {
 
     getAppeals() {
-        return instance.get('orders/getAllOrders/,/,/')
+        return instance.get<{ orders: responseType[], total: number }>('orders/getAllOrders/,/,/')
     },
 
     createAppeal(body: appealPropsType) {
-        return instance.post('/orders/createOrder', body)
+        return instance.post<responseType>('/orders/createOrder', body)
     },
 
     deleteAppeal(orderId: number) {

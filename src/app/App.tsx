@@ -5,7 +5,6 @@ import {Navbar} from "../Navbar";
 import {CreateAppeal} from "../pages/CreateAppeal/CreateAppeal";
 import {Appeals} from "../pages/Appeals/Appeals";
 import {AppealDetailed} from "../pages/AppealDetailed/AppealDetailed";
-import {store} from "./store";
 
 function App() {
   return (

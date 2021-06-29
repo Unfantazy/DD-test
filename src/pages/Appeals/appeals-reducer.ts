@@ -4,10 +4,10 @@ import {appealApi} from "../../api/appeal-api";
 
 const initialState: Array<appealPropsType> = []
 
-export const appealsReducer = (state: Array<appealPropsType> = initialState, action: ActionsType) : Array<appealPropsType> => {
+export const appealsReducer = (state = initialState, action: ActionsType) : Array<appealPropsType> => {
     switch (action.type) {
         case 'GET-APPEALS':
-            return action.appeals.map(a => ({ ...a}))
+            return action.appeals
         default:
             return state
     }
@@ -21,7 +21,7 @@ export const getAppealsTC = () => {
     return (dispatch: ThunkDispatch) => {
         appealApi.getAppeals()
             .then((res) => {
-                dispatch(setAppealsAC(res.data))
+                dispatch(setAppealsAC(res.data.orders))
             })
     }
 }
