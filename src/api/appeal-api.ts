@@ -20,3 +20,16 @@ export const appealApi = {
     }
 
 }
+
+type responseType = {
+    _id: string,
+    firstName: string,
+    lastName: string,
+    middleName: string,
+    withoutMiddleName: boolean,
+    userPhone: string,
+    text: string,
+    date: string,
+    orderId: number,
+    __v: number
+}

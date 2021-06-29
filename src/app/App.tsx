@@ -4,6 +4,7 @@ import './App.css';
 import {Navbar} from "../Navbar";
 import {CreateAppeal} from "../pages/CreateAppeal/CreateAppeal";
 import {Appeals} from "../pages/Appeals/Appeals";
+import {AppealDetailed} from "../pages/AppealDetailed/AppealDetailed";
 
 function App() {
   return (
@@ -14,7 +15,9 @@ function App() {
         <Switch>
             <Route exact path={"/create"} render={() => <CreateAppeal/>}/>
             <Route path={"/appeal"} render={() => <Appeals /> }/>
+            <Route path={"/detailed"} render={() => <AppealDetailed /> }/>
             <Route path={'/404'} render={() => <h1>404: PAGE NOT FOUND</h1>}/>
+            <Redirect from={'/'} to={"/create"}/>
             <Redirect from={'*'} to={"/404"}/>
         </Switch>
     </div>

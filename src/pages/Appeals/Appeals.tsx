@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {Appeal, appealPropsType} from '../../Components/Appeal/Appeal';
 import s from './Appeals.module.scss'
 import {Modal} from "../../Components/Modal/Modal";
+import {Link} from "react-router-dom";
 
 export function Appeals() {
 
@@ -21,7 +22,7 @@ export function Appeals() {
         <div style={{padding: '0 10px'}}>
             <input type="text" placeholder='Имя, фамилия, отчество, номер...' className={s.inputFilter}/>
 
-            <table className="table-light__content" style={{background: 'white'}}>
+            <table style={{borderCollapse: 'collapse'}}>
                 <colgroup>
                     <col width='2%'/>
                     <col width='10%'/>
