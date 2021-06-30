@@ -4,10 +4,15 @@ import {appealApi} from "../../api/appeal-api";
 
 const initialState: Array<appealPropsType> = []
 
-export const appealsReducer = (state = initialState, action: ActionsType) : Array<appealPropsType> => {
+export const appealsReducer = (state = initialState, action: ActionsType): Array<appealPropsType> => {
     switch (action.type) {
         case 'GET-APPEALS':
             return action.appeals
+        case 'DELETE-APPEAL':
+            return state.filter(ap => ap.orderId !== action.orderId)
+        case 'CREATE-APPEAL' :
+            return [{...action.appeal}, ...state]
+
         default:
             return state
     }
@@ -15,6 +20,8 @@ export const appealsReducer = (state = initialState, action: ActionsType) : Arra
 
 // actions
 export const setAppealsAC = (appeals: Array<appealPropsType>) => ({type: 'GET-APPEALS', appeals} as const)
+export const deleteAppealAC = (orderId: number) => ({type: 'DELETE-APPEAL', orderId} as const)
+export const createAppealAC = (appeal: appealPropsType) => ({type: 'CREATE-APPEAL', appeal} as const)
 
 // thunks
 export const getAppealsTC = () => {
@@ -26,10 +33,32 @@ export const getAppealsTC = () => {
     }
 }
 
+export const deleteAppealTC = (orderId: number) => {
+    return (dispatch: ThunkDispatch) => {
+        appealApi.deleteAppeal(orderId)
+            .then((res) => {
+                dispatch(deleteAppealAC(orderId))
+            })
+    }
+}
+
+export const createAppealTC = (appeal:appealPropsType ) => {
+    return (dispatch: ThunkDispatch) => {
+        appealApi.createAppeal(appeal)
+            .then((res) => {
+                dispatch(createAppealAC(appeal))
+            })
+    }
+}
+
 // types
 export type SetAppealsActionType = ReturnType<typeof setAppealsAC>;
+export type DeleteAppealActionType = ReturnType<typeof deleteAppealAC>;
+export type CreateAppealActionType = ReturnType<typeof createAppealAC>;
 
 type ActionsType =
     | SetAppealsActionType
+    | DeleteAppealActionType
+    | CreateAppealActionType
 
 type ThunkDispatch = Dispatch<ActionsType>

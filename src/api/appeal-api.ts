@@ -3,6 +3,7 @@ import {appealPropsType} from "../Components/Appeal/Appeal";
 
 const instance = axios.create({
     baseURL: 'https://fronttestcrud.ddplanet.ru/',
+    withCredentials: true
 })
 
 export const appealApi = {
@@ -12,7 +13,7 @@ export const appealApi = {
     },
 
     createAppeal(body: appealPropsType) {
-        return instance.post<responseType>('/orders/createOrder', body)
+        return instance.post<responseType>('orders/createOrder', body)
     },
 
     deleteAppeal(orderId: number) {

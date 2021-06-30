@@ -19,7 +19,7 @@ export function Appeals() {
 
     useEffect(() => {
         dispatch(getAppealsTC())
-    }, [])
+    }, [dispatch])
 
     const [isShown, setIsShown] = useState(false)
 
@@ -53,6 +53,7 @@ export function Appeals() {
                 <tbody>
                 {appeals.map(a => {
                     return <Appeal
+                        orderId={a.orderId}
                         text={a.text}
                         firstName={a.firstName}
                         lastName={a.lastName}
